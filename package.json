@@ -1,0 +1,48 @@
+{
+  "name": "sanity_milk_api",
+  "version": "1.0.0",
+  "description": "API para tratar os dados do app da sanity milk",
+  "repository": "https://github.com/hygorNunes/SanityMilk_API",
+  "copyright": "Copyright 2029 Hygor Nunes",
+  "main": "dist/app.js",
+  "scripts": {
+    "prestart": "npm run build",
+    "start": "nodemon src/app --exec \"node -r babel-register --tls-min-v1.0\"",
+    "start:dev": "nodemon src/app --exec \"npm run lint && node -r babel-register\"",
+    "clean": "rimraf dist",
+    "build": "npm run clean && mkdir dist && babel src/ -s -d dist",
+    "test": "mocha --exit --require babel-register test/",
+    "lint": "esw src",
+    "semantic-release": "semantic-release -e @semantic-release/gitlab -D"
+  },
+  "keywords": [
+    "login",
+    "API",
+    "Rest",
+    "RestFull",
+    "Framework",
+    "OpenSource"
+  ],
+  "author": "Hygor Nunes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hygorNunes/SanityMilk_API/issues"
+  },
+  "homepage": "https://github.com/hygorNunes/SanityMilk_API/blob/main/README.md",
+  "devDependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "cors": "^2.8.5",
+    "debug": "^4.3.1",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "mongoose": "^5.11.19",
+    "nodemon": "^2.0.7",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0"
+  }
+}
